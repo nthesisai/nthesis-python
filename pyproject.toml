@@ -32,8 +32,10 @@ Homepage = "https://nthesis.ai"
 Repository = "https://github.com/nthesis/nthesis-python"
 
 [tool.setuptools]
-packages = ["nthesis"]
-package-dir = { nthesis = "." }
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.package-data]
 nthesis = ["py.typed"]
