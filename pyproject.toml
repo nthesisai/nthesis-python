@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nthesis"
+version = "0.1.0"
+description = "Python client for the nthesis API"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.31",
+]
+authors = [
+  { name = "Nthesis" },
+]
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://nthesis.ai"
+Repository = "https://github.com/nthesis/nthesis-python"
+
+[tool.setuptools]
+packages = ["nthesis"]
+package-dir = { nthesis = "." }
+
+[tool.setuptools.package-data]
+nthesis = ["py.typed"]
