@@ -8,26 +8,20 @@ import requests
 
 from .models import NewItemResponse, Store
 
-
 class NthesisError(Exception):
     """Base exception for errors raised by :class:`Client`."""
-
 
 class UnauthorizedError(NthesisError):
     """Raised when the API responds with HTTP 401 Unauthorized."""
 
-
 class ConflictError(NthesisError):
     """Raised when the API responds with HTTP 409 Conflict."""
-
 
 class BadRequestError(NthesisError):
     """Raised when the API responds with HTTP 400 Bad Request."""
 
-
 class NotFoundError(NthesisError):
     """Raised when the requested resource cannot be found."""
-
 
 class UnexpectedResponseError(NthesisError):
     """Raised when an unexpected HTTP response is returned by the API."""
@@ -40,17 +34,14 @@ class UnexpectedResponseError(NthesisError):
 
 
 class Nthesis:
-    """A simple HTTP client for the nthesis API."""
-
+    """Client for nthesis.ai API"""
     def __init__(
         self,
-        base_address: str,
+        base_address: str | None = "https://nthesis.ai",
         api_key: str | None = None,
         *,
         session: Optional[requests.Session] = None,
     ) -> None:
-        """Create a new client instance."""
-
         if not base_address:
             raise ValueError("base_address must be provided")
 

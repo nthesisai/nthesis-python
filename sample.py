@@ -1,7 +1,6 @@
 import os
 import arxiv
-from nthesis import Nthesis
-from nthesis.nthesis import ConflictError
+from nthesis import Nthesis, ConflictError
 
 base_url = os.getenv("NTHESIS_BASE_URL", "https://nthesis.ai")
 api_key = os.getenv("NTHESIS_API_KEY")
@@ -28,4 +27,3 @@ for result in arxiv_client.results(search):
         print(res.hash)
     except ConflictError:
         print('conflict - skipping')
-
