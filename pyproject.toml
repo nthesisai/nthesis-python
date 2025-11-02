@@ -14,7 +14,7 @@ dependencies = [
 authors = [
   { name = "Nthesis" },
 ]
-license = { text = "MIT" }
+license-files = ["LICENSE"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
@@ -22,7 +22,6 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
-  "License :: OSI Approved :: MIT License",
   "Intended Audience :: Developers",
   "Typing :: Typed",
 ]
@@ -32,8 +31,10 @@ Homepage = "https://nthesis.ai"
 Repository = "https://github.com/nthesis/nthesis-python"
 
 [tool.setuptools]
-packages = ["nthesis"]
-package-dir = { nthesis = "." }
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.package-data]
 nthesis = ["py.typed"]
