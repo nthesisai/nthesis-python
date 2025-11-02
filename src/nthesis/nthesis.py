@@ -37,8 +37,8 @@ class Nthesis:
     """Client for nthesis.ai API"""
     def __init__(
         self,
-        base_address: str | None = "https://nthesis.ai",
         api_key: str | None = None,
+        base_address: str | None = "https://nthesis.ai",
         *,
         session: Optional[requests.Session] = None,
     ) -> None:
